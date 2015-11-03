@@ -18,6 +18,16 @@ class AddressBook
       index += 1
     end
 
-      @entries.insert(index, Entry.new(name, phone_number, email))
+    @entries.insert(index, Entry.new(name, phone_number, email))
+  end
+
+  def find_by_number(n)
+    if n == 0
+      "Invalid entry. Please try again."
+    elsif @entries.count >= n
+      @entries[n-1].to_s
+    else
+      "Number to high, please try again!"
     end
+  end
 end
